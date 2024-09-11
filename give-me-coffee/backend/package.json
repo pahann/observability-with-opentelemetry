@@ -1,0 +1,19 @@
+{
+    "name": "give-me-coffee-backend",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+      "app-service": "OTEL_SERVICE_NAME=app-service node --require ./utils/instrumentation.js app-service.js",
+      "user-service": "OTEL_SERVICE_NAME=user-service node --require ./utils/instrumentation.js user-service.js",
+      "coffee-service": "OTEL_SERVICE_NAME=coffee-service node --require ./utils/instrumentation.js coffee-service.js"
+    },
+    "description": "",
+    "dependencies": {
+      "@faker-js/faker": "^8.4.1",
+      "@opentelemetry/auto-instrumentations-node": "^0.50.0",
+      "@opentelemetry/sdk-node": "^0.53.0",
+      "cors": "^2.8.5",
+      "express": "^4.19.2",
+      "pino": "^9.3.2"
+    }
+  }
